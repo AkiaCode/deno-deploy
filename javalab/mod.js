@@ -1,5 +1,5 @@
 async function handleRequest(request) {
-    return Response.redirect("https://discord.gg/D7cSQ25", 301);
+    return Response.redirect(Deno.env.get("invite"), 301);
 }
 
 addEventListener("fetch", (event) => {
