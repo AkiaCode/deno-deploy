@@ -8,7 +8,7 @@ async function handleRequest(request) {
       })
 
     const { files }  = await response.json();
-    const test = await files.map(x => "<img src=\"" + x.url.replace("http://127.0.0.1:8270/", "https://h_api.pmh.codes/") + "\" style=\"display: block; margin: 0 auto; width: 450px; height: 450px;\"\>");
+    const test = await files.map(x => "<img src=\"" + x.url.replace("http://127.0.0.1:8270/", "https://h_api.pmh.codes/") + "\" style=\"display: block; margin: 0 auto; width: 450px; height: 450px;\"/>");
 
     return new Response(`<body>${test.join("\n")}<br><br>${files.map(x => "<a herf=\"" + x.url.replace("http://127.0.0.1:8270/", "https://h_api.pmh.codes/") + "\">" + x.name + "</a>").join("\n") }</body>
     `, {
